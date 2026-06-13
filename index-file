@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>YouTube Site</title>
+<style>
+body{
+margin:0;
+background:black;
+}
+
+iframe{
+width:100vw;
+height:100vh;
+border:none;
+}
+</style>
+</head>
+<body>
+
+<iframe
+src="https://www.youtube.com/embed/3mB0Uk5c2OU?autoplay=1&mute=1"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</body>
+</html>
