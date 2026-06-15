@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -15,9 +16,20 @@ body{
     width:100vw;
     height:100vh;
 }
+
+#notify{
+    position:fixed;
+    top:10px;
+    left:10px;
+    z-index:1000;
+    padding:10px;
+}
 </style>
+
 </head>
 <body>
+
+<button id="notify">通知を許可</button>
 
 <iframe
     id="player"
@@ -28,41 +40,16 @@ body{
     allowfullscreen>
 </iframe>
 
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>通知テスト</title>
-</head>
-<body>
-
-<h1>通知テスト</h1>
-<button id="start">通知を開始</button>
-
 <script>
-document.getElementById("start").onclick = async () => {
+document.getElementById("notify").onclick = async () => {
 
     const permission = await Notification.requestPermission();
 
-    if (permission !== "granted") {
-        alert("通知が許可されませんでした");
-        return;
+    if (permission === "granted") {
+        alert("通知が許可されました");
+    } else {
+        alert("通知が拒否されました");
     }
-
-    function sendNotification() {
-        new Notification("お知らせ", {
-            body: "マジカル☆プリンセス見るな"
-        });
-    }
-
-    sendNotification();
-
-    setInterval(() => {
-        sendNotification();
-    }, 60000); // 60秒ごと
 };
 </script>
 
