@@ -40,19 +40,3 @@ body{
     allowfullscreen>
 </iframe>
 
-<script>
-document.getElementById("notify").onclick = async () => {
-
-    const permission = await Notification.requestPermission();
-
-    if (permission === "granted") {
-        alert("通知が許可されました");
-    } else {
-        alert("通知が拒否されました");
-    }
-};
-</script>
-
-</body>
-</html>
-
